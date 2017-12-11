@@ -5,6 +5,12 @@ public class Garaxe {
     static int numeroCoches = 0;
     private String matricula;
 
+    // Constructor
+    
+    public Garaxe(){
+        
+    }
+    
     public Garaxe(String matricula) {
         
         if (numeroCoches < 5){
@@ -19,6 +25,18 @@ public class Garaxe {
         }
         
     }
+
+    // Get y Set
+    
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+    
+    // Pagar Factura
     
     public void PagarFactura(float cartos, float tempo){
         
