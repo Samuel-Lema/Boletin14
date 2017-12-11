@@ -17,8 +17,9 @@ public class Garaxe {
            
             System.out.print("Coche " + matricula + " registrado. ");
             this.numeroCoches += 1;
+            this.matricula = matricula;
             System.out.println("Quedan " + (5 - numeroCoches) + " prazas disponibles.");
-            this.matricula = matricula;  
+              
         } else {
             
             System.out.println("Completo.");
