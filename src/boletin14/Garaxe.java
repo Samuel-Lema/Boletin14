@@ -4,6 +4,7 @@ public class Garaxe {
     
     static int numeroCoches = 0;
     private String matricula;
+    long startTime;
 
     // Constructor
     
@@ -18,6 +19,7 @@ public class Garaxe {
             System.out.print("Coche " + matricula + " registrado. ");
             this.numeroCoches += 1;
             this.matricula = matricula;
+            this.startTime = System.currentTimeMillis();
             System.out.println("Quedan " + (5 - numeroCoches) + " prazas disponibles.");
               
         } else {
@@ -39,9 +41,11 @@ public class Garaxe {
     
     // Pagar Factura
     
-    public void PagarFactura(float cartos, float tempo){
+    public void PagarFactura(float cartos){
         
         double precio = 1.5;
+
+        long tempo = (long) (Math.floor(System.currentTimeMillis() / 3600) - Math.floor(startTime / 3600));
         
         for(int i = 0; i < tempo; i++){
             
@@ -62,6 +66,7 @@ public class Garaxe {
                             "CARTOS DEVOLTOS: " + (cartos - precio) + "\n\n" +
                             "GRACIAS POR USAR O NOSO APARCADOIRO ");
             this.numeroCoches -= 1;
+            
         } else {
             
             System.out.println("Faltan " + (precio - cartos) + " para pagar a tarifa.");
